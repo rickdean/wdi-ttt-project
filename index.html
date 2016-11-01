@@ -57,7 +57,7 @@
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   <!-- link to custom stylesheet (always require after Bootstrap) -->
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="./assets/scripts/index.js">
 
   <!-- jQuery from CDN -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -106,13 +106,13 @@
   </div>
 
 
-      <!-- Modal -->
+      <!-- SignUPForm-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">They Who Wish To Play Must Sign-Up</h4>
       </div>
       <div class="modal-body">
         <form class='sign-up-form'>
@@ -124,16 +124,6 @@
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
   <button type="submit" class="btn btn-default">Submit</button>
   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 </form>
@@ -142,6 +132,37 @@
     </div>
   </div>
 </div>
-<!-- Modal END -->
+<!-- SignUP END -->
+
+<!-- SignInForm-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title" id="myModalLabel">Are you a Zen Master? Sign In to See...</h4>
+</div>
+<div class="modal-body">
+  <form class='sign-in-form'>
+<div class="form-group">
+<label for="exampleInputEmail1">Email address</label>
+<input type="email" class="form-control" id="sign-in-email" placeholder="Email">
+</div>
+<div class="form-group">
+<label for="exampleInputPassword1">Password</label>
+<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+</div>
+<button type="submit" class="btn btn-default">Submit</button>
+<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</form>
+</div>
+
+</div>
+</div>
+</div>
+<!-- SignIn END -->
+
+
+
     </body>
 </html>

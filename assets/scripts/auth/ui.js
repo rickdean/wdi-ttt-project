@@ -20,8 +20,6 @@ $('#messages').text('fail');
 
 
 
-
-
 module.exports = {
   signInSuccess,
   failure,
