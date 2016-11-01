@@ -7,17 +7,14 @@
     </head>
     <body>
       <!--NAVBAR START-->
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">TIC TAC TOE</a>
+            <a class="navbar-brand" href="#">TIC TAC ZEN</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -28,10 +25,10 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign-Up<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign-Up<span class="caret">'</span></a>
                 <ul class="dropdown-menu">
                   <li><a>
-                    <!-- Button trigger modal -->
+                  <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Sign-Up
 </button>
@@ -39,8 +36,6 @@
                   <li><a href="#">Sign-In</a></li>
                   <li><a href="#">Change Password</a></li>
                   <li><a href="#">Sign-Out</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
                 </ul>
               </li>
             </ul>
@@ -49,32 +44,58 @@
       </nav>
       <!--NAVBAR END-->
 
-      <h1>Example</h1>
+<div class = "title">
+  <h2>...are you a Zen Master?</h2>
+  <br>
+  <p class="proverb">Ancient Proverb: He who starts first starts with an 'X'....
+    <br>- Confucius Clone </p>
+  </div>
 
-        <br>
-        <br>
-        <br>
-        <div class = 'box'>
-        <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-        <div class="row1">
-          <div class="col-xs-4 col-md-4 box">.col-xs-4 .col-md-4</div>
-          <div class="col-xs-4 col-md-4 box">.col-xs-4 .col-md-4</div>
-          <div class="col-xs-4 col-md-4 box">.col-xs-4 .col-md-4</div>
-        </div>
+  <br>
+  <br>
+  <br>
+  <div class="container">
 
-        <div class="row2">
-          <div class="col-xs-4 col-md-4 box">.col-xs-4 .col-md-4</div>
-          <div class="col-xs-4 col-md-4 box">.col-xs-4 .col-md-4</div>
-          <div class="col-xs-4 col-md-4 box">.col-xs-4 .col-md-4</div>
-        </div>
+	<div class="col-md-4 col-md-offset-4 game-board">
+		<div class="row game-row">
+			<div class="col-xs-4 game-square">
+				<div class="game-square-contents" id="square-1"></div>
+			</div>
+			<div class="col-xs-4 game-square">
+				<div class="game-square-contents" id="square-2"></div>
+			</div>
+			<div class="col-xs-4 game-square">
+				<div class="game-square-contents" id="square-3"></div>
+			</div>
+		</div>
+		<div class="row game-row">
+			<div class="col-xs-4 game-square">
+				<div class="game-square-contents" id="square-4"></div>
+			</div>
+			<div class="col-xs-4 game-square">
+				<div class="game-square-contents" id="square-5"></div>
+			</div>
+			<div class="col-xs-4 game-square">
+				<div class="game-square-contents" id="square-6"></div>
+			</div>
+		</div>
+		<div class="row game-row">
+			<div class="col-xs-4 game-square">
+				<div class="game-square-contents" id="square-7"></div>
+			</div>
+			<div class="col-xs-4 game-square">
+				<div class="game-square-contents" id="square-8"></div>
+			</div>
+			<div class="col-xs-4 game-square">
+				<div class="game-square-contents" id="square-9"></div>
+			</div>
+		</div>
+		<div class="row instructions">
+			O's Turn
+		</div>
+	</div>
 
-        <div class="row3">
-          <div class="col-xs-4 col-md-4 box">.col-xs-4 .col-md-4</div>
-          <div class="col-xs-4 col-md-4 box">.col-xs-4 .col-md-4</div>
-          <div class="col-xs-4 col-md-4 box">.col-xs-4 .col-md-4</div>
-        </div>
-
-      </div>
+</div>
 
 
       <!-- Modal -->
