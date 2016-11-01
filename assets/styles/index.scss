@@ -1,8 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/';
 
-$background-color: #4e4e4e;
-$font-color: #dfdfdf;
+$background-color: #ccc;
+$gamesquarebackground: #fcfcfc;
+$gamesquareboder: #d1d1d1;
+$gamesquarecolor: #9c8468;
+$font-color: #808080;
 $white: #fff;
 
 body {
@@ -10,6 +13,46 @@ body {
   color: $font-color;
 }
 
-.box {
-  border: 1px solid $white;
+.title {
+  margin-left: 50px;
+  z-index: 2;
 }
+
+.proverb {
+  font-size: 10px;
+  font-style: italic;
+  text-align: left;
+}
+
+.game-square-contents {
+  background-color: $gamesquarebackground;
+  border-color: $gamesquareboder;
+  border-style: solid;
+  border-width: 1px;
+  bottom: 0;
+  color: $gamesquarecolor;
+  cursor: pointer;
+  font-size: 48px;
+  font-weight: bold;
+  left: 0;
+  opacity: .8;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+}
+
+.game-square {
+  position: relative;
+}
+
+.game-square::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+			 }
+
+.game-board {
+  margin: 25px;
+  text-align: center;
+			}
