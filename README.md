@@ -4,4 +4,8 @@
 
 ## Introduction
 
-Rick's TTT Project
+I started with the HTML.  One mistake I made was jumping the gun and beginning the project before learning about Bootstrap.  This caused me to do away with my original plan and to utilize what Bootstrap had to offer (navbar, etc).
+
+## The GRID
+
+Once I had a game grid created (after a series of trials and errors with the bootsrap box) I began to build the code (after extensive Jquery googling).
