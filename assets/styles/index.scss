@@ -1,17 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/';
 
-$background-color: #ccc;
-$gamesquarebackground: #fcfcfc;
-$gamesquareboder: #d1d1d1;
-$gamesquarecolor: #9c8468;
-$font-color: #808080;
-$white: #fff;
+$black: #000;
+$x-color: #f2183d;
+$o-color: #4ecdc4;
+$reset: #f2183d;
+$reset2: #4ecdc4;
 
-body {
-  background-color: $background-color;
-  color: $font-color;
-}
+
 
 .title {
   margin-left: 50px;
@@ -24,35 +20,33 @@ body {
   text-align: left;
 }
 
-.game-square-contents {
-  background-color: $gamesquarebackground;
-  border-color: $gamesquareboder;
-  border-style: solid;
-  border-width: 1px;
-  bottom: 0;
-  color: $gamesquarecolor;
+.board {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.box {
+  border: 1px solid $black;
   cursor: pointer;
-  font-size: 48px;
-  font-weight: bold;
-  left: 0;
-  opacity: .8;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 0;
+  font-size: 50px;
+  height: 150px;
+  padding: 38px 0;
 }
 
-.game-square {
-  position: relative;
+.X {
+  color: $x-color;
 }
 
-.game-square::before {
-  content: '';
-  display: block;
-  padding-top: 100%;
-			 }
+.O {
+  color: $o-color;
+}
 
-.game-board {
-  margin: 25px;
-  text-align: center;
-			}
+.btn-reset {
+  background-color: $reset;
+  border-color: $reset;
+}
+
+.btn-reset:hover {
+  background-color: $reset2;
+  border-color: $reset2;
+}
