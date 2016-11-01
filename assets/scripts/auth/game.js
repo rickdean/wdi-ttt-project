@@ -21,7 +21,12 @@ $(document).ready(function() {
     // reset the counters created above
     turn = "X";
     moves = 0;
+
+    //reset messages
+    $('.message').text('Play Again?');
+    $('.message')[0].style.fontSize="20px";
   };
+
 
   // keep track of player switching
   let changeTurn = function() {
@@ -99,24 +104,19 @@ $(document).ready(function() {
 
       let winner = getWinner();
       if (winner) {
-  // REVISIT RICK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        alert("Player " + winner + " won!");
-        resetGame();
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // Set Message
+        $('.message')[0].style.fontSize="50px";
+        $('.message').text("Player " + winner + " won!");
       } else if (moves < 9) {
         changeTurn();
       } else {
- // REVISIT RICK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        alert("Cat's Game!");
-        resetGame();
+        $('.message')[0].style.fontSize="50px";
+        $('.message').text("Cat's Game");
       }
     }
   });
-
-
   //game reset
 
-  // listen for clicks on reset button to reset the game
   $('#reset').on('click', function() {
     resetGame();
   });

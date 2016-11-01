@@ -1,13 +1,16 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/';
 
+
 $black: #000;
 $x-color: #f2183d;
 $o-color: #4ecdc4;
 $reset: #f2183d;
 $reset2: #4ecdc4;
 
-
+body {
+  background-image: url('./zen-opac.png');
+}
 
 .title {
   margin-left: 50px;
