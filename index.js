@@ -20,3 +20,9 @@ require('expose?getFormFields!./lib/get-form-fields.js');
 
 //attach game logic
 require('./assets/scripts/auth/game.js');
+
+//attach login and game api
+//$(()=>{
+//  authEvents.addHandlers();
+//  gameAPIEvents.addGameAPIHandlers();
+//});

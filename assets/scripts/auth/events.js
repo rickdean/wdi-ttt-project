@@ -32,15 +32,20 @@ const onChangePassword = function (event) {
 const onSignOut = function (event) {
   event.preventDefault();
   api.signOut()
-    .then(ui.Success)
+    .then(ui.signOutSuccess)
     .catch(ui.failure);
 };
+
+
+
+
 
 const addHandlers = () => {
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
   $('.change-password-form').on('submit', onChangePassword);
   $('.sign-out-form').on('submit', onSignOut);
+
 };
 
 module.exports = {
