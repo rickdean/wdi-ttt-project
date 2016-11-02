@@ -3,6 +3,7 @@
 const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
+const store = require('../store.js');
 
 
 const onSignUp = function (event) {
@@ -42,10 +43,6 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
 };
-
-
-
-
 
 
 module.exports = {
