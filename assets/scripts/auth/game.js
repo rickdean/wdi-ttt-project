@@ -2,6 +2,13 @@
 
 $(document).ready(function() {
 
+  let game = {
+    xTurn: true,
+    currentGameMoves: 0,
+    currentCellId: null,
+    currentGame: null,
+  };
+
   // declare all boxes
   let $boxes = $('.box');
 

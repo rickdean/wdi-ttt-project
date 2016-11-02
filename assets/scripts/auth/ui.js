@@ -1,6 +1,7 @@
 'use strict';
 
 const store = require('../store');
+const game = require('./game');
 
 const hideAndClear = (modal) => {
   setTimeout(function() {
@@ -37,7 +38,10 @@ $('#messages').text('So sorry...you failed authentication.');
   console.error(error);
 };
 
-
+const createGameSuccess = (data) => {
+  game.currentGame = data.game;
+  console.log(data);
+};
 
 
 module.exports = {
@@ -45,4 +49,5 @@ module.exports = {
   signOutSuccess,
   failure,
   success,
+  createGameSuccess,
 };

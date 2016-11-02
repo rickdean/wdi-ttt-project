@@ -36,6 +36,12 @@ const onSignOut = function (event) {
     .catch(ui.failure);
 };
 
+const onCreateGame = () => {
+  event.preventDefault();
+  api.createGame()
+    .done(ui.createGameSuccess)
+    .fail(ui.createGameFailure);
+};
 
 
 
@@ -45,6 +51,7 @@ const addHandlers = () => {
   $('.sign-in-form').on('submit', onSignIn);
   $('.change-password-form').on('submit', onChangePassword);
   $('.sign-out-form').on('submit', onSignOut);
+  $('.new-game').on('click', onCreateGame);
 
 };
 
