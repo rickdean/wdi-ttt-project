@@ -57,6 +57,7 @@ webpackJsonp([0],[
 	var getFormFields = __webpack_require__(4);
 	var api = __webpack_require__(5);
 	var ui = __webpack_require__(8);
+	var store = __webpack_require__(7);
 
 	var onSignUp = function onSignUp(event) {
 	  var data = getFormFields(this);
