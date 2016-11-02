@@ -5,14 +5,13 @@ const authEvents = require('./auth/events.js');
 
 $(()=>{
 
-$('.sign-up-form').on('submit', function(e){
-e.preventDefault();
+//$('.sign-up-form').on('submit', function(e){
+//e.preventDefault();
 
-let $zenplayer1 = $('#sign-up-email').val();
-debugger;
+//let $zenplayer1 = $('#sign-up-email').val();
+
 
 
 authEvents.addHandlers();
 
-});
 });
