@@ -38,9 +38,6 @@ const signOut = () =>
 });
 
 
-
-
-
 module.exports = {
 
   signUp,
