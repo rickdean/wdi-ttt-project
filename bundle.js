@@ -36,14 +36,13 @@ webpackJsonp([0],[
 
 	$(function () {
 
-	  $('.sign-up-form').on('submit', function (e) {
-	    e.preventDefault();
+	  //$('.sign-up-form').on('submit', function(e){
+	  //e.preventDefault();
 
-	    var $zenplayer1 = $('#sign-up-email').val();
-	    debugger;
+	  //let $zenplayer1 = $('#sign-up-email').val();
 
-	    authEvents.addHandlers();
-	  });
+
+	  authEvents.addHandlers();
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
@@ -83,10 +82,10 @@ webpackJsonp([0],[
 	};
 
 	var addHandlers = function addHandlers() {
-	  $('#sign-up').on('submit', onSignUp);
-	  $('#sign-in').on('submit', onSignIn);
-	  $('#change-password').on('submit', onChangePassword);
-	  $('#sign-out').on('submit', onSignOut);
+	  $('.sign-up-form').on('submit', onSignUp);
+	  $('.sign-in-form').on('submit', onSignIn);
+	  $('.change-password-form').on('submit', onChangePassword);
+	  $('.sign-out-form').on('submit', onSignOut);
 	};
 
 	module.exports = {
@@ -222,9 +221,12 @@ webpackJsonp([0],[
 
 	var config = {
 	  host: 'http://localhost:4741'
+
 	};
 
 	module.exports = config;
+
+	//host: 'https://aqueous-atoll-85096.herokuapp.com',
 
 /***/ },
 /* 7 */
@@ -245,17 +247,19 @@ webpackJsonp([0],[
 	var store = __webpack_require__(7);
 
 	var success = function success(data) {
-	  $('#messages').text('success');
+	  $('#messages').text('Domo arigato...You Must Sign In.');
 	  console.log(data);
 	};
 
 	var signInSuccess = function signInSuccess(data) {
+	  $('#messages').text('Domo arigato...You May Play.');
 	  store.user = data.user;
 	  success(data);
+	  console.log(data);
 	};
 
 	var failure = function failure(error) {
-	  $('#messages').text('fail');
+	  $('#messages').text('So sorry...you failed authentication.');
 	  console.error(error);
 	};
 
