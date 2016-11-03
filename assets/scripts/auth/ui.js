@@ -1,7 +1,7 @@
 'use strict';
 
 const store = require('../store');
-const game = require('./game');
+const app = require('./app');
 
 const clear = (modal) => {
   setTimeout(function() {
@@ -47,11 +47,16 @@ $('.messages').text('So sorry...you failed authentication.');
 };
 
 const createGameSuccess = (data) => {
-  game.currentGame = data.game;
-  $('.messages').text("Well done Daniel San...You may begin with an 'X'");
+  app.game = data.game;
+  $('.messages').text("Well done Player-San...You may begin with an 'X'");
   console.log(data);
 };
 
+const updateGameSuccess = (data) => {
+  app.game = data.game;
+  $('.messages').text("I anticipate the next move with patience...");
+  console.log(data);
+};
 
 module.exports = {
   signInSuccess,
@@ -60,4 +65,6 @@ module.exports = {
   failure,
   success,
   createGameSuccess,
+  updateGameSuccess,
+
 };

@@ -15,28 +15,27 @@ $(document).ready(function() {
 
 
   // game reset
-  let resetGame = function() {
+  let resetGame = function () {
 
-    $boxes.text("");
-    $boxes.removeClass("X");
-    $boxes.removeClass("O");
+    $boxes.text('');
+    $boxes.removeClass('X');
+    $boxes.removeClass('O');
 
     // reset the counters created above
-    turn = "X";
+    turn = 'X';
     moves = 0;
 
     //reset messages
     $('.message').text('Play Again?');
-    $('.message')[0].style.fontSize="20px";
+    $('.message')[0].style.fontSize = '20px';
   };
-
 
   // keep track of player switching
   let changeTurn = function() {
-    if (turn === "X") {
-      turn = "O";
+    if (turn === 'X') {
+      turn = 'O';
     } else {
-      turn = "X";
+      turn = 'X';
     }
   };
 
@@ -45,7 +44,7 @@ $(document).ready(function() {
   //if box is not empty then continue with the turn
   $boxes.on('click', function() {
 
-    if ($(this).text() === "") {
+    if ($(this).text() === '') {
       $(this).text(turn);
       $(this).addClass(turn);
   //after each turn add to the counter variable set above
@@ -54,11 +53,7 @@ $(document).ready(function() {
 
       // Finding a Winner //
 
-      //I found this strategy of assigning boxes to an owner
-      //the next step is to see if the same player owns the
-      //three returneboxes
-
-      let allThree = function($firstBox, $secondBox, $thirdBox) {
+      let allThree = function ($firstBox, $secondBox, $thirdBox) {
        let firstBoxOwner = $firstBox.text(),
             secondBoxOwner = $secondBox.text(),
             thirdBoxOwner = $thirdBox.text();

@@ -2,13 +2,13 @@
 
 const config = require('../config');
 const store = require('../store');
-const game = require('./game');
+const app = require('./app');
 
 
 const signUp = (data) =>
     $.ajax({
       url: config.host + '/sign-up',
-      method: 'POST',
+    method: 'POST',
       data,
 });
 
@@ -48,20 +48,15 @@ const createGame = () => {
   });
 };
 
-const endGame = () => {
-  return $.ajax({
-    url: config.host + '/games/' + game.currentGame.id,
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + config.user.token,
-    },
-    data: {
-      game: {
-        over: true,
-      },
-    },
-  });
-};
+const updateGame = (data) =>
+$.ajax({
+  url: config.host + '/games/' + app.game.id,
+  method: 'PATCH',
+  data,
+  headers: {
+    Authorization: 'Token token=' + store.user.token,
+  },
+});
 
 module.exports = {
 
@@ -70,5 +65,5 @@ module.exports = {
   changePassword,
   signOut,
   createGame,
-  endGame,
+  updateGame,
 };
