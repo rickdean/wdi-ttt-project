@@ -33,15 +33,32 @@ const onChangePassword = function (event) {
 const onSignOut = function (event) {
   event.preventDefault();
   api.signOut()
-    .then(ui.Success)
+    .then(ui.signOutSuccess)
     .catch(ui.failure);
 };
+
+const onCreateGame = () => {
+  event.preventDefault();
+  api.createGame()
+    .done(ui.createGameSuccess)
+    .fail(ui.createGameFailure);
+};
+
+const onEndGameSuccess = (data) => {
+  api.updateGame(data);
+  ui.endGame();
+};
+
 
 const addHandlers = () => {
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
   $('.change-password-form').on('submit', onChangePassword);
   $('.sign-out-form').on('submit', onSignOut);
+  $('.new-game').on('click', onCreateGame);
+  $('#reset').on('click', onEndGameSuccess);
+
+
 };
 
 

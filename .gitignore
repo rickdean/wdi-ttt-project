@@ -1,8 +1,12 @@
 tmp
 dist
+<<<<<<< HEAD
 
 specs.js
 
+=======
+specs.js
+>>>>>>> master
 _SpecRunner.html
 *.woff2
 *.woff
