@@ -48,17 +48,30 @@ return $.ajax({
   });
 };
 
+const updateGame = () =>
+ $.ajax({
+  url: config.host + '/games/' + app.game.id,
+  method: 'PATCH',
+  headers: {
+    Authorization: 'Token token=' + store.user.token,
+  },
+  data: {
+    game: {
+      over: false,
+    },
+  },
+});
 
-
-//const updateGame = (data) =>
- //$.ajax({
-//  url: config.host + '/games/' + app.game.id,
-//  method: 'PATCH',
-//  data,
-//  headers: {
-//    Authorization: 'Token token=' + store.user.token,
-//  },
-//});
+const getGames = () => {
+  let request = $.ajax({
+    url: config.host + '/games/?over=true',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+  });
+  return request;
+};
 
 module.exports = {
 
@@ -67,5 +80,6 @@ module.exports = {
   changePassword,
   signOut,
   createGame,
-//  updateGame,
+  updateGame,
+  getGames,
 };
