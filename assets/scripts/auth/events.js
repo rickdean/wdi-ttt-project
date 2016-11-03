@@ -5,7 +5,6 @@ const api = require('./api');
 const ui = require('./ui');
 const store = require('../store.js');
 
-
 const onSignUp = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
@@ -26,7 +25,7 @@ const onChangePassword = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
   api.changePassword(data)
-    .then(ui.Success)
+    .then(ui.passSuccess)
     .catch(ui.failure);
 };
 
@@ -44,10 +43,18 @@ const onCreateGame = () => {
     .fail(ui.createGameFailure);
 };
 
-const onEndGameSuccess = (data) => {
-  api.updateGame(data);
-  ui.endGame();
-};
+//const onUpdateGame = () => {
+//  event.preventDefault();
+//  api.updateGame()
+//    .done(ui.updateGameSuccess)
+//    .fail(ui.updateGameFailure);
+//};
+
+
+//const onEndGameSuccess = (data) => {
+  //api.updateGame(data);
+  //ui.endGame();
+//};
 
 
 const addHandlers = () => {
@@ -56,8 +63,7 @@ const addHandlers = () => {
   $('.change-password-form').on('submit', onChangePassword);
   $('.sign-out-form').on('submit', onSignOut);
   $('.new-game').on('click', onCreateGame);
-  $('#reset').on('click', onEndGameSuccess);
-
+  //$('.box').on('click', onUpdateGame);
 
 };
 
