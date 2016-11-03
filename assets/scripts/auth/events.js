@@ -43,7 +43,10 @@ const onCreateGame = () => {
     .fail(ui.createGameFailure);
 };
 
-
+const onEndGameSuccess = (data) => {
+  api.updateGame(data);
+  ui.endGame();
+};
 
 
 const addHandlers = () => {
@@ -52,6 +55,8 @@ const addHandlers = () => {
   $('.change-password-form').on('submit', onChangePassword);
   $('.sign-out-form').on('submit', onSignOut);
   $('.new-game').on('click', onCreateGame);
+  $('#reset').on('click', onEndGameSuccess);
+
 
 };
 

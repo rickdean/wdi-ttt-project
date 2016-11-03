@@ -2,14 +2,9 @@
 
 $(document).ready(function() {
 
-  let game = {
-    xTurn: true,
-    currentGameMoves: 0,
-    currentCellId: null,
-    currentGame: null,
-  };
 
-  // declare all boxes
+
+  // set all boxes
   let $boxes = $('.box');
 
   // player "X" goes first
@@ -17,6 +12,7 @@ $(document).ready(function() {
 
   // move count should start at '0'
   let moves = 0;
+
 
   // game reset
   let resetGame = function() {
@@ -58,7 +54,7 @@ $(document).ready(function() {
 
       // Finding a Winner //
 
-      //I found this strategy of assigning boxes to a player
+      //I found this strategy of assigning boxes to an owner
       //the next step is to see if the same player owns the
       //three returneboxes
 
@@ -80,7 +76,7 @@ $(document).ready(function() {
   //winner assignment
   //if there is no winner play continues
   let diagonalWinner = function() {
-    // the eq method is how we "index into" a jQuery collection!
+    // .eq for the index
     let leftDownDiag = allThree($boxes.eq(0), $boxes.eq(4), $boxes.eq(8));
     let rightUpDiag = allThree($boxes.eq(2), $boxes.eq(4), $boxes.eq(6));
     return leftDownDiag || rightUpDiag;
