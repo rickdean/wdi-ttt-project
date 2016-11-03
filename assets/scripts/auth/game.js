@@ -3,7 +3,6 @@
 $(document).ready(function() {
 
 
-
   // set all boxes
   let $boxes = $('.box');
 
@@ -26,7 +25,7 @@ $(document).ready(function() {
     moves = 0;
 
     //reset messages
-    $('.message').text('Play Again?');
+    $('.message').text('Play Again? Click the "Here" Button again :)');
     $('.message')[0].style.fontSize = '20px';
   };
 
