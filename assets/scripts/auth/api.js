@@ -2,6 +2,7 @@
 
 const config = require('../config');
 const store = require('../store');
+const game = require('./game');
 
 
 const signUp = (data) =>
@@ -37,10 +38,37 @@ const signOut = () =>
       },
 });
 
+const createGame = () => {
+  return $.ajax({
+    url: config.host + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+  });
+};
+
+const endGame = () => {
+  return $.ajax({
+    url: config.host + '/games/' + game.currentGame.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + config.user.token,
+    },
+    data: {
+      game: {
+        over: true,
+      },
+    },
+  });
+};
+
 module.exports = {
 
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createGame,
+  endGame,
 };
