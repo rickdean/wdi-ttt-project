@@ -52,11 +52,11 @@ const createGameSuccess = (data) => {
   console.log(data);
 };
 
-const updateGameSuccess = (data) => {
-  app.game = data.game;
-  $('.messages').text("I anticipate the next move with patience...");
-  console.log(data);
-};
+//const updateGameSuccess = (data) => {
+//  app.game = data.game;
+//  $('.messages').text("I anticipate the next move with patience...");
+//  console.log(data);
+//};
 
 module.exports = {
   signInSuccess,
@@ -65,6 +65,6 @@ module.exports = {
   failure,
   success,
   createGameSuccess,
-  updateGameSuccess,
+//  updateGameSuccess,
 
 };

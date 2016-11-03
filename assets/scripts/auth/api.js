@@ -39,7 +39,7 @@ const signOut = () =>
 });
 
 const createGame = () => {
-  return $.ajax({
+return $.ajax({
     url: config.host + '/games',
     method: 'POST',
     headers: {
@@ -48,15 +48,17 @@ const createGame = () => {
   });
 };
 
-const updateGame = (data) =>
-$.ajax({
-  url: config.host + '/games/' + app.game.id,
-  method: 'PATCH',
-  data,
-  headers: {
-    Authorization: 'Token token=' + store.user.token,
-  },
-});
+
+
+//const updateGame = (data) =>
+ //$.ajax({
+//  url: config.host + '/games/' + app.game.id,
+//  method: 'PATCH',
+//  data,
+//  headers: {
+//    Authorization: 'Token token=' + store.user.token,
+//  },
+//});
 
 module.exports = {
 
@@ -65,5 +67,5 @@ module.exports = {
   changePassword,
   signOut,
   createGame,
-  updateGame,
+//  updateGame,
 };
