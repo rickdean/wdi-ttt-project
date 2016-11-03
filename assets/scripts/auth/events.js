@@ -42,12 +42,19 @@ const onCreateGame = () => {
     .fail(ui.createGameFailure);
 };
 
-//const onUpdateGame = () => {
-//  event.preventDefault();
-//  api.updateGame()
-//    .done(ui.updateGameSuccess)
-//    .fail(ui.updateGameFailure);
-//};
+const onUpdateGame = () => {
+  event.preventDefault();
+  api.updateGame()
+    .done(ui.updateGameSuccess)
+    .fail(ui.updateGameFailure);
+};
+
+const onFinishedGames = () => {
+  event.preventDefault();
+  api.getGames()
+    .done(ui.getGameSuccess)
+    .fail(ui.getGameFailure);
+};
 
 
 //const onEndGameSuccess = (data) => {
@@ -62,7 +69,8 @@ const addHandlers = () => {
   $('.change-password-form').on('submit', onChangePassword);
   $('.sign-out-form').on('submit', onSignOut);
   $('.new-game').on('click', onCreateGame);
-  //$('.box').on('click', onUpdateGame);
+  $('.box').on('click', onUpdateGame);
+  $('#past').on('click', onFinishedGames);
 
 };
 
