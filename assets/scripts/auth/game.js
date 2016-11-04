@@ -15,10 +15,12 @@ $(document).ready(function() {
 
   // game reset
   let resetGame = function () {
-
     $boxes.text('');
     $boxes.removeClass('X');
     $boxes.removeClass('O');
+    $('.wrap-board').show();
+    $('.button-wrapper').hide();
+
 
     // reset the counters created above
     turn = 'X';
@@ -28,6 +30,7 @@ $(document).ready(function() {
     $('.message').text('Play Again? Click the "Here" Button again :)');
     $('.message')[0].style.fontSize = '20px';
   };
+
 
   // keep track of player switching
   let changeTurn = function() {
@@ -102,13 +105,19 @@ $(document).ready(function() {
       let winner = getWinner();
       if (winner) {
   // Set Message
+        $('.wrap-board').hide(500);
         $('.message')[0].style.fontSize="50px";
         $('.message').text("Player " + winner + " won!");
+        $('.button-wrapper').show();
+      //  $boxes.off('click');
       } else if (moves < 9) {
         changeTurn();
       } else {
+        $('.wrap-board').hide(500);
         $('.message')[0].style.fontSize="50px";
         $('.message').text("Cat's Game");
+        $('.button-wrapper').show();
+      //  $boxes.off('click');
       }
     }
   });
