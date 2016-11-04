@@ -61,7 +61,6 @@ const updateGameSuccess = (data) => {
 const getGameSuccess = (data) => {
   app.game = data.game;
   $('.messages').text("You have been a very busy student...");
-  console.log(data);
 };
 
 module.exports = {

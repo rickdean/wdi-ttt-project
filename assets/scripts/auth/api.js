@@ -48,6 +48,7 @@ return $.ajax({
   });
 };
 
+
 const updateGame = () =>
  $.ajax({
   url: config.host + '/games/' + app.game.id,

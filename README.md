@@ -4,25 +4,33 @@
 
 ## Introduction
 
-Welcome to Tic-Tac-Zen.  In this game each player, who wishes to have their game stats tracked, is required to sign-up, and to then sign-in.  The game will then track who has won and allow a sign-in player to view their stats.
+Welcome to Tic-Tac-Zen.  After signing up and signing on the player must first start a new game in order to play.  A reset will set the stage for a new game to be created under the same User ID.
 
-# User Stories
+GAME URL: https://rickdean.github.io/wdi-ttt-project/
 
+## User's Persepctive
 
+From User's perspective I created set of User Stories that helped in some of the decisions made during development.
+- A User must know when they need to sign-up and sign-in.
+- A User must know when a game needs to be created in order to play.
+- A User must be presented with an aesthetically pleasing board.
+- A User must be presented with a message that the game is over and who won.
+- A User must have the ability to create a new game.
 
 ## The Layout
 
-One mistake I made was jumping the gun and beginning the project before learning about Bootstrap.  This caused me to do away with my original plan and to utilize what Bootstrap had to offer (navbar, etc).  I did encounter some problems with sizing the boxes but once I had tyhat solved I moved onto the aesthetics of the site.  My goal was not to spend too much time on the look and feel as the game logic would provide more than enough challenges.  I went with a soothing, zen-like interface and tried to remain consistent with the styling, font, colors, etc.
+I utlized bootstrap for the framework of the User experience.  All styling was created with the sole purpose of keeping the
+game board clean and enhancing the User's experience.
 
-## Code Separation
+## Code Separation & Version Control
 
-I went with the recommended modular approach and utilized the template structure that was provided.  This allowed me to keep the HTML, SCSS, and Javascript code separate and compartmentalized.  One regret I have is in not separating the events.js for the game state and player authorization.  This may have made for a cleaner solution.
+I went a modular approach and utilized the template structure that was provided.  This allowed me to keep the HTML, SCSS, and Javascript code separate and compartmentalized.
 
+Frequent commits to GitHub from my 'dev' branch ensured that I always had a clean copy of working code available to me should
+I need to revert back to a previous state.
 
-## Authorization
+## Development History
 
-The game authorization took a little time and I stuck with my original goal of meeting the specs for sign-up, sign-in, change password, and sign-out.  There is more I would have liked to accomplish in this section, such as specialized messages, but time did not allow for this.  I would like to continue with this piece as it is evident in the code that I had started to do so.
-
-## The Game State (Creation, Stats, etc)
-
-I saved the Game State for last, assuming that it would be an easier piece to tackle.  I was wrong as it took me quite some time to get the functionality for updating the gamestate to work.
+The first step in planning the game to create a simple wireframe of the site and gameboard placement.  This was followed with
+the logic, in plain english, of the steps that would need to be involved to determine a winner.  From there it was a matter of
+using what I'd learned in class, Google searches, instructor, and classmate assistance to overcome obstacles along the way.  Challenges I faced were around the game api interface and this proved to be the focus of my efforts near the ened of the project.
