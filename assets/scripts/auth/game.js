@@ -1,7 +1,17 @@
+
 'use strict';
 
-$(document).ready(function() {
 
+//$(document).ready(function() {
+let data = {
+  "game": {
+    //"cell": {
+    //  "index": '',
+    //  "value": '',
+    //  },
+    "over": false,
+    }
+  };
 
   // set all boxes
   let $boxes = $('.box');
@@ -20,7 +30,6 @@ $(document).ready(function() {
     $boxes.removeClass('O');
     $('.wrap-board').show();
     $('.button-wrapper').hide();
-
 
     // reset the counters created above
     turn = 'X';
@@ -62,8 +71,10 @@ $(document).ready(function() {
 
         if ((firstBoxOwner === secondBoxOwner) && (secondBoxOwner === thirdBoxOwner)){
           if (firstBoxOwner === "X"){
+            data.game.over = true;
             return "X";
           } else if (firstBoxOwner === "O"){
+
             return "O";
           }
         }
@@ -128,4 +139,4 @@ $(document).ready(function() {
   });
 
 
-});
+//});

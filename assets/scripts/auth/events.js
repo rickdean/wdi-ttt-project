@@ -1,9 +1,10 @@
 'use strict';
 
 const getFormFields = require(`../../../lib/get-form-fields`);
-const api = require('./api');
-const ui = require('./ui');
+const api = require('./api.js');
+const ui = require('./ui.js');
 const store = require('../store.js');
+const currentGame = require('./game.js');
 
 const onSignUp = function (event) {
   let data = getFormFields(this);
@@ -36,15 +37,13 @@ const onSignOut = function (event) {
     .catch(ui.failure);
 };
 
-const onCreateGame = () => {
-  event.preventDefault();
+const onCreateGame = function () {
   api.createGame()
     .done(ui.createGameSuccess)
     .fail(ui.createGameFailure);
 };
 
-const onUpdateGame = () => {
-  event.preventDefault();
+const onUpdateGame = function () {
   api.updateGame()
     .done(ui.updateGameSuccess)
     .fail(ui.updateGameFailure);
@@ -56,12 +55,6 @@ const onFinishedGames = () => {
     .done(ui.getGameSuccess)
     .fail(ui.getGameFailure);
 };
-
-
-//const onEndGameSuccess = (data) => {
-  //api.updateGame(data);
-  //ui.endGame();
-//};
 
 
 const addHandlers = () => {

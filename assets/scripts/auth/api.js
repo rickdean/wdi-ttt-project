@@ -1,9 +1,9 @@
 'use strict';
 
-const config = require('../config');
-const store = require('../store');
-const app = require('./app');
-
+const config = require('../config.js');
+const store = require('../store.js');
+const app = require('./app.js');
+const data = require('./game.js');
 
 const signUp = (data) =>
     $.ajax({
@@ -49,19 +49,35 @@ return $.ajax({
 };
 
 
-const updateGame = () =>
+const updateGame = (data) =>
  $.ajax({
   url: config.host + '/games/' + app.game.id,
   method: 'PATCH',
+  data,
   headers: {
     Authorization: 'Token token=' + store.user.token,
   },
-  data: {
-    game: {
-      over: false,
-    },
-  },
 });
+//const updateGame = () =>
+// $.ajax({
+//  //url: config.host + '/games/' + store.game.id,
+//  url: config.host + '/games/' + app.game.id,
+//  method: 'PATCH',
+//  headers: {
+//      Authorization: 'Token token=' + store.user.token,
+//    },
+//    data: {
+//      game: {
+//        cell: {
+//          index:'',
+//          value: '',
+//          //index: store.game.currentIndex,
+//          //value: store.game.currentToken,
+//        over: false,
+//        },
+//      },
+//    },
+//  });
 
 const getGames = () => {
   let request = $.ajax({
