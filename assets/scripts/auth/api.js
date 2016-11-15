@@ -4,7 +4,7 @@
 const config = require('../config.js');
 const store = require('../store.js');
 const app = require('./app.js');
-const data = require('./game.js');
+
 
 const signUp = (data) =>
     $.ajax({
@@ -72,8 +72,6 @@ const updateGame = (data) =>
 //        cell: {
 //          index:'',
 //          value: '',
-//          //index: store.game.currentIndex,
-//          //value: store.game.currentToken,
 //        over: false,
 //        },
 //      },

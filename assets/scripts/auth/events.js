@@ -3,8 +3,8 @@
 const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api.js');
 const ui = require('./ui.js');
-const store = require('../store.js');
-const currentGame = require('./game.js');
+const gameState = require('./game.js');
+
 
 const onSignUp = function (event) {
   let data = getFormFields(this);
@@ -44,10 +44,12 @@ const onCreateGame = function () {
 };
 
 const onUpdateGame = function () {
-  api.updateGame()
+  console.log("this is the events game data" + gameState.getData)
+  api.updateGame(data)
     .done(ui.updateGameSuccess)
     .fail(ui.updateGameFailure);
 };
+console.log("this is gamestate data" + gameState.getdata);
 
 const onFinishedGames = () => {
   event.preventDefault();
@@ -63,6 +65,7 @@ const addHandlers = () => {
   $('.change-password-form').on('submit', onChangePassword);
   $('.sign-out-form').on('submit', onSignOut);
   $('.new-game').on('click', onCreateGame);
+  //$('#reset').on('click', onUpdateGame);
   $('.box').on('click', onUpdateGame);
   $('#past').on('click', onFinishedGames);
 
