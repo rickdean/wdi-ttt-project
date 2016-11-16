@@ -44,12 +44,12 @@ const onCreateGame = function () {
 };
 
 const onUpdateGame = function () {
-  console.log("this is the events game data" + gameState.getData)
-  api.updateGame(data)
+  console.log("this is the events game data" + gameState.getData);
+  api.updateGame(gameState.getData())
     .done(ui.updateGameSuccess)
     .fail(ui.updateGameFailure);
 };
-console.log("this is gamestate data" + gameState.getdata);
+console.log("this is gamestate data" + gameState.data);
 
 const onFinishedGames = () => {
   event.preventDefault();

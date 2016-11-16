@@ -75,7 +75,7 @@ $boxes.on('click', function() {
           data.game.over = true;
           return "X";
         } else if (firstBoxOwner === "O") {
-
+          data.game.over = true;
           return "O";
         }
       }
