@@ -1,6 +1,5 @@
 'use strict';
 
-//$(document).ready(function() {
 let data = {
   "game": {
     "cell": {
@@ -12,15 +11,9 @@ let data = {
 };
 
 console.log("DATA AFTER CREATION OF FILE: " + data);
-// set all boxes
 let $boxes = $('.box');
-
-// player "X" goes first
 let turn = "X";
-
-// move count should start at '0'
 let moves = 0;
-
 
 // game reset
 let resetGame = function() {
@@ -29,41 +22,34 @@ let resetGame = function() {
   $boxes.removeClass('O');
   $('.wrap-board').show();
   $('.button-wrapper').hide();
-  //data.game.over = true;
-
-
-  // reset the counters created above
   turn = 'X';
   moves = 0;
-
-  //reset messages
   $('.message').text('Play Again? Click the "Here" Button again :)');
   $('.message')[0].style.fontSize = '20px';
 };
 
 
-// keep track of player switching
 let changeTurn = function() {
   if (turn === 'X') {
     turn = 'O';
+    //data.game.cell.index = '1';
+    data.game.cell.value = 'x';
   } else {
     turn = 'X';
+    //data.game.cell.index = '2';
+    data.game.cell.value = 'o';
   }
 };
 
-// clicking rules
-//start to see of box is empty
-//if box is not empty then continue with the turn
+
 $boxes.on('click', function() {
 
   if ($(this).text() === '') {
     $(this).text(turn);
     $(this).addClass(turn);
-    //after each turn add to the counter variable set above
+    //data.game.cell.index = ;
     moves += 1;
 
-
-    // Finding a Winner //
 
     let allThree = function($firstBox, $secondBox, $thirdBox) {
       let firstBoxOwner = $firstBox.text(),
@@ -82,10 +68,8 @@ $boxes.on('click', function() {
       return null;
     };
 
-    //winner assignment
-    //if there is no winner play continues
+
     let diagonalWinner = function() {
-      // .eq for the index
       let leftDownDiag = allThree($boxes.eq(0), $boxes.eq(4), $boxes.eq(8));
       let rightUpDiag = allThree($boxes.eq(2), $boxes.eq(4), $boxes.eq(6));
       return leftDownDiag || rightUpDiag;
@@ -116,12 +100,11 @@ $boxes.on('click', function() {
 
     let winner = getWinner();
     if (winner) {
-      // Set Message
       $('.wrap-board').hide(500);
       $('.message')[0].style.fontSize = "50px";
       $('.message').text("Player " + winner + " won!");
       $('.button-wrapper').show();
-      //  $boxes.off('click');
+
     } else if (moves < 9) {
       changeTurn();
     } else {
@@ -129,7 +112,7 @@ $boxes.on('click', function() {
       $('.message')[0].style.fontSize = "50px";
       $('.message').text("Cat's Game");
       $('.button-wrapper').show();
-      //  $boxes.off('click');
+
     }
   }
 });
@@ -140,13 +123,9 @@ let getData = function() {
 };
 
 
-//game reset
-
 $('#reset').on('click', function() {
   resetGame();
 });
-
-//});
 
 module.exports = {
   getData,
