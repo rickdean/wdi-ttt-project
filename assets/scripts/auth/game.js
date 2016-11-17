@@ -20,7 +20,6 @@ let resetGame = function() {
   $boxes.removeClass('X');
   $boxes.removeClass('O');
   $('.wrap-board').show();
-  //$('.button-wrapper').hide();
   turn = 'X';
   moves = 0;
   $('.message').text('Play Again? Click the "Here" Button again :)');

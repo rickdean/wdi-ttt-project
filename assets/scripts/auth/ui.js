@@ -67,18 +67,9 @@ const getGameSuccess = (data) => {
     console.log(data);
 };
 
-//const getGameFailure = () => {
-//  common.genericFailure();
-//};
-
 const displayStats = () => {
   $('#game-stats').show();
 };
-
-//const getGameSuccess = (data) => {
-//  app.game = data.game;
-//  $('.messages').text("You have been a very busy student...");
-//};
 
 module.exports = {
   signInSuccess,
@@ -89,6 +80,5 @@ module.exports = {
   createGameSuccess,
   updateGameSuccess,
   getGameSuccess,
-  //getGameFailure,
   displayStats,
 };
