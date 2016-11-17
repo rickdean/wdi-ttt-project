@@ -31,6 +31,7 @@ const signInSuccess = data => {
   success(data);
 $('.messages').text('You may play but please create a game first...');
   console.log(data);
+  document.getElementById("begin").style.display = "none";
   clear('#signIn');
 };
 

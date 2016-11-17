@@ -64,7 +64,6 @@ const updateGame = (data) =>
 const getGames = () =>
   $.ajax({
     url: config.host + '/games/',
-    //url: config.host + '/games/?over=true',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
