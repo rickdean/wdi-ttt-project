@@ -1,7 +1,5 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/';
-
-
 $black: #000;
 $x-color: #f2183d;
 $o-color: #4ecdc4;
@@ -16,6 +14,7 @@ body {
 .title {
   margin-left: 50px;
   z-index: 2;
+  display: none;
 }
 
 .proverb {
@@ -32,6 +31,9 @@ body {
   margin: 0 auto;
 }
 
+.wrap-board {
+  display: none;
+}
 
 #board {
   margin-bottom: 10px;
@@ -47,9 +49,9 @@ body {
 }
 
 .button-wrapper {
+  display: none;
   margin: 0 auto;
   text-align: center;
-
 }
 
 .X {
@@ -60,6 +62,10 @@ body {
   color: $o-color;
 }
 
+#reset {
+  display: none;
+}
+
 .btn-reset {
   background-color: $reset;
   border-color: $reset;
@@ -68,4 +74,8 @@ body {
 .btn-reset:hover {
   background-color: $reset2;
   border-color: $reset2;
+}
+
+#game-stats {
+  display: none;
 }

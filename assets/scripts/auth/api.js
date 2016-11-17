@@ -59,35 +59,16 @@ const updateGame = (data) =>
     Authorization: 'Token token=' + store.user.token,
   },
 });
-//const updateGame = () =>
-// $.ajax({
-//  //url: config.host + '/games/' + store.game.id,
-//  url: config.host + '/games/' + app.game.id,
-//  method: 'PATCH',
-//  headers: {
-//      Authorization: 'Token token=' + store.user.token,
-//    },
-//    data: {
-//      game: {
-//        cell: {
-//          index:'',
-//          value: '',
-//        over: false,
-//        },
-//      },
-//    },
-//  });
 
-const getGames = () => {
-  let request = $.ajax({
-    url: config.host + '/games/?over=true',
+
+const getGames = () =>
+  $.ajax({
+    url: config.host + '/games/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
     },
   });
-  return request;
-};
 
 module.exports = {
 
