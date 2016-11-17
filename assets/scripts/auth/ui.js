@@ -2,6 +2,7 @@
 
 const store = require('../store');
 const app = require('./app');
+const logic = require('./game.js');
 
 const clear = (modal) => {
   setTimeout(function() {
@@ -59,9 +60,25 @@ const updateGameSuccess = (data) => {
 };
 
 const getGameSuccess = (data) => {
-  app.game = data.game;
   $('.messages').text("You have been a very busy student...");
+  $('#total-games').text('Games Played: ' + data.games.length);
+  $('#completed-games').text('Games Completed: ' +
+    logic.calcCompletedGames(data));
+    console.log(data);
 };
+
+//const getGameFailure = () => {
+//  common.genericFailure();
+//};
+
+const displayStats = () => {
+  $('#game-stats').show();
+};
+
+//const getGameSuccess = (data) => {
+//  app.game = data.game;
+//  $('.messages').text("You have been a very busy student...");
+//};
 
 module.exports = {
   signInSuccess,
@@ -72,4 +89,6 @@ module.exports = {
   createGameSuccess,
   updateGameSuccess,
   getGameSuccess,
+  //getGameFailure,
+  displayStats,
 };

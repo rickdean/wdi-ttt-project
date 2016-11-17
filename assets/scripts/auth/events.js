@@ -44,19 +44,19 @@ const onCreateGame = function () {
 };
 
 const onUpdateGame = function () {
-  console.log("this is the events game data" + gameState.getData);
   api.updateGame(gameState.getData())
     .done(ui.updateGameSuccess)
     .fail(ui.updateGameFailure);
 };
-console.log("this is gamestate data" + gameState.data);
 
-const onFinishedGames = () => {
+const onGetGames = function (event) {
   event.preventDefault();
   api.getGames()
-    .done(ui.getGameSuccess)
-    .fail(ui.getGameFailure);
+    .then(ui.getGameSuccess)
+    .catch(ui.failure);
+    ui.displayStats();
 };
+
 
 
 const addHandlers = () => {
@@ -65,9 +65,8 @@ const addHandlers = () => {
   $('.change-password-form').on('submit', onChangePassword);
   $('.sign-out-form').on('submit', onSignOut);
   $('.new-game').on('click', onCreateGame);
-  //$('#reset').on('click', onUpdateGame);
   $('.box').on('click', onUpdateGame);
-  $('#past').on('click', onFinishedGames);
+  $('#past').on('click', onGetGames);
 
 };
 

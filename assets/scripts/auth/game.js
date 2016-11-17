@@ -3,14 +3,13 @@
 let data = {
   "game": {
     "cell": {
-      "index": '0',
+      "index": '',
       "value": 'x',
     },
     "over": false,
   }
 };
 
-console.log("DATA AFTER CREATION OF FILE: " + data);
 let $boxes = $('.box');
 let turn = "X";
 let moves = 0;
@@ -21,7 +20,7 @@ let resetGame = function() {
   $boxes.removeClass('X');
   $boxes.removeClass('O');
   $('.wrap-board').show();
-  $('.button-wrapper').hide();
+  //$('.button-wrapper').hide();
   turn = 'X';
   moves = 0;
   $('.message').text('Play Again? Click the "Here" Button again :)');
@@ -32,11 +31,9 @@ let resetGame = function() {
 let changeTurn = function() {
   if (turn === 'X') {
     turn = 'O';
-    //data.game.cell.index = '1';
     data.game.cell.value = 'x';
   } else {
     turn = 'X';
-    //data.game.cell.index = '2';
     data.game.cell.value = 'o';
   }
 };
@@ -47,7 +44,7 @@ $boxes.on('click', function() {
   if ($(this).text() === '') {
     $(this).text(turn);
     $(this).addClass(turn);
-    //data.game.cell.index = ;
+    data.game.cell.index = $(this).data("index");
     moves += 1;
 
 
@@ -118,15 +115,24 @@ $boxes.on('click', function() {
 });
 
 let getData = function() {
-  console.log("get data is returning data" + data);
   return data;
 };
-
 
 $('#reset').on('click', function() {
   resetGame();
 });
 
+const calcCompletedGames = (data) => {
+  let completedGames = 0;
+  for (let i = 0; i < data.games.length; i++) {
+    if (data.games[i].over) {
+      completedGames++;
+    }
+  }
+  return completedGames;
+};
+
 module.exports = {
   getData,
+  calcCompletedGames,
 };
