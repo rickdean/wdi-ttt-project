@@ -21,10 +21,13 @@ let resetGame = function() {
   $boxes.removeClass('O');
   $('.wrap-board').show();
   $('#game-stats').hide();
+  $('.message').hide();
+  $('.message').text("");
+  $('#past').hide();
   turn = 'X';
   moves = 0;
-  $('.message').text('Play Again? Click the "Here" Button again :)');
-  $('.message')[0].style.fontSize = '20px';
+  //$('.message').text('Play Again? Click the "Here" Button again :)');
+  //$('.message')[0].style.fontSize = '20px';
 };
 
 
@@ -101,6 +104,7 @@ $boxes.on('click', function() {
       $('.message')[0].style.fontSize = "50px";
       $('.message').text("Player " + winner + " won!");
       $('.button-wrapper').show();
+      $('#past').show();
 
     } else if (moves < 9) {
       changeTurn();
