@@ -33,8 +33,8 @@ I need to revert back to a previous state.
 
 The first step in planning the game to create a simple wireframe of the site and gameboard placement.
 Wireframes:
- - Original (http://evolutiontalk.com/public_html/images/wireframe_original.jpg)
- - Concept (http://evolutiontalk.com/public_html/images/ttt_zen.jpg)
- - Logic Note (http://.evolutiontalk.com/public_html/images/logic_notes.jpeg)
+ - Original (http://evolutiontalk.com/images/wireframe_original.jpg)
+ - Concept (http://evolutiontalk.com/images/ttt_zen.jpg)
+ - Logic Note (http://evolutiontalk.com/images/logic_notes.jpeg)
 
 This was followed with the logic, in plain english, of the steps that would need to be involved to determine a winner.  From there it was a matter of using what I'd learned in class, Google searches, instructor, and classmate assistance to overcome obstacles along the way.  Challenges I faced were around the game api interface and this proved to be the focus of my efforts near the ened of the project.
