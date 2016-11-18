@@ -15,14 +15,17 @@ const clear = (modal) => {
 
 const success = (data) => {
 $('.messages').text('Domo arigato...You Must Sign In.');
-  console.log(data);
   clear('#signUp');
   clear('#changePass');
 };
 
 const signOutSuccess = (data) => {
 $('.messages').text('Be well and walk long...');
-  console.log(data);
+$('.wrap-board').hide(500);
+$('#reset').hide(500);
+$('.button-wrapper').hide(500);
+$('.title').hide(500);
+$('#game-stats').hide();
   clear('#signOut');
 };
 
@@ -30,34 +33,34 @@ const signInSuccess = data => {
   store.user = data.user;
   success(data);
 $('.messages').text('You may play but please create a game first...');
-  console.log(data);
-  document.getElementById("begin").style.display = "none";
+$('.title').show(500);
+  $('.begin').hide(500);
   clear('#signIn');
 };
 
 const passSuccess = (data) => {
 $('.messages').text('Your new secret word is safe with me.');
-  console.log(data);
   clear('#signUp');
   clear('#changePass');
 };
 
 const failure = (error) => {
 $('.messages').text('So sorry...you failed authentication.');
-  console.error(error);
   clear('#signIn');
 };
 
 const createGameSuccess = (data) => {
   app.game = data.game;
   $('.messages').text("Well done Player-San...You may begin with an 'X'");
-  console.log(data);
+  $('.wrap-board').show(500);
+  $('#reset').show(500);
+  $('.button-wrapper').show(500);
+  $('#game-stats').hide();
 };
 
 const updateGameSuccess = (data) => {
   app.game = data.game;
   $('.messages').text("I anticipate the next move with patience...");
-  console.log(data);
 };
 
 const getGameSuccess = (data) => {
@@ -65,7 +68,6 @@ const getGameSuccess = (data) => {
   $('#total-games').text('Games Played: ' + data.games.length);
   $('#completed-games').text('Games Completed: ' +
     logic.calcCompletedGames(data));
-    console.log(data);
 };
 
 const displayStats = () => {
