@@ -24,13 +24,17 @@ game board clean and enhancing the User's experience.
 
 ## Code Separation & Version Control
 
-I went a modular approach and utilized the template structure that was provided.  This allowed me to keep the HTML, SCSS, and Javascript code separate and compartmentalized.
+I went with a modular approach and utilized the template structure that was provided.  This allowed me to keep the HTML, SCSS, and Javascript code separate and compartmentalized.
 
 Frequent commits to GitHub from my 'dev' branch ensured that I always had a clean copy of working code available to me should
 I need to revert back to a previous state.
 
 ## Development History
 
-The first step in planning the game to create a simple wireframe of the site and gameboard placement.  This was followed with
-the logic, in plain english, of the steps that would need to be involved to determine a winner.  From there it was a matter of
-using what I'd learned in class, Google searches, instructor, and classmate assistance to overcome obstacles along the way.  Challenges I faced were around the game api interface and this proved to be the focus of my efforts near the ened of the project.
+The first step in planning the game to create a simple wireframe of the site and gameboard placement.
+Wireframes:
+ - Original (http://evolutiontalk.com/public_html/images/wireframe_original.jpg)
+ - Concept (http://evolutiontalk.com/public_html/images/ttt_zen.jpg)
+ - Logic Note (http://.evolutiontalk.com/public_html/images/logic_notes.jpeg)
+
+This was followed with the logic, in plain english, of the steps that would need to be involved to determine a winner.  From there it was a matter of using what I'd learned in class, Google searches, instructor, and classmate assistance to overcome obstacles along the way.  Challenges I faced were around the game api interface and this proved to be the focus of my efforts near the ened of the project.
