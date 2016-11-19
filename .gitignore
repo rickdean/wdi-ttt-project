@@ -1,16 +1,8 @@
 tmp
 dist
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 specs.js
-
-=======
-=======
 dependencies.js
->>>>>>> master
 specs.js
->>>>>>> master
 _SpecRunner.html
 *.woff2
 *.woff
