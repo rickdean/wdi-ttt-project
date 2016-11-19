@@ -1,9 +1,10 @@
 'use strict';
 
 const getFormFields = require(`../../../lib/get-form-fields`);
-const api = require('./api');
-const ui = require('./ui');
-const store = require('../store.js');
+const api = require('./api.js');
+const ui = require('./ui.js');
+const gameState = require('./game.js');
+
 
 const onSignUp = function (event) {
   let data = getFormFields(this);
@@ -36,45 +37,37 @@ const onSignOut = function (event) {
     .catch(ui.failure);
 };
 
-const onCreateGame = () => {
-  event.preventDefault();
+const onCreateGame = function () {
   api.createGame()
     .done(ui.createGameSuccess)
     .fail(ui.createGameFailure);
 };
 
-const onUpdateGame = () => {
-  event.preventDefault();
-  api.updateGame()
+const onUpdateGame = function () {
+  api.updateGame(gameState.getData())
     .done(ui.updateGameSuccess)
     .fail(ui.updateGameFailure);
 };
 
-const onFinishedGames = () => {
+const onGetGames = function (event) {
   event.preventDefault();
   api.getGames()
-    .done(ui.getGameSuccess)
-    .fail(ui.getGameFailure);
+    .then(ui.getGameSuccess)
+    .catch(ui.failure);
+    ui.displayStats();
 };
-
-
-//const onEndGameSuccess = (data) => {
-  //api.updateGame(data);
-  //ui.endGame();
-//};
-
 
 const addHandlers = () => {
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
   $('.change-password-form').on('submit', onChangePassword);
   $('.sign-out-form').on('submit', onSignOut);
+  $('#reset').on('click', onCreateGame);
   $('.new-game').on('click', onCreateGame);
   $('.box').on('click', onUpdateGame);
-  $('#past').on('click', onFinishedGames);
+  $('#past').on('click', onGetGames);
 
 };
-
 
 module.exports = {
   addHandlers,
