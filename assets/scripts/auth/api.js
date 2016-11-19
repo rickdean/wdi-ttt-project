@@ -71,7 +71,6 @@ const getGames = () =>
   });
 
 module.exports = {
-
   signUp,
   signIn,
   changePassword,

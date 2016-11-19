@@ -57,8 +57,6 @@ const onGetGames = function (event) {
     ui.displayStats();
 };
 
-
-
 const addHandlers = () => {
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);

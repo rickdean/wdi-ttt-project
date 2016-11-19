@@ -14,7 +14,6 @@ let $boxes = $('.box');
 let turn = "X";
 let moves = 0;
 
-// game reset
 let resetGame = function() {
   $boxes.text('');
   $boxes.removeClass('X');
@@ -26,10 +25,7 @@ let resetGame = function() {
   $('#past').hide();
   turn = 'X';
   moves = 0;
-  //$('.message').text('Play Again? Click the "Here" Button again :)');
-  //$('.message')[0].style.fontSize = '20px';
 };
-
 
 let changeTurn = function() {
   if (turn === 'X') {
@@ -68,13 +64,11 @@ $boxes.on('click', function() {
       return null;
     };
 
-
     let diagonalWinner = function() {
       let leftDownDiag = allThree($boxes.eq(0), $boxes.eq(4), $boxes.eq(8));
       let rightUpDiag = allThree($boxes.eq(2), $boxes.eq(4), $boxes.eq(6));
       return leftDownDiag || rightUpDiag;
     };
-
 
     let columnWinner = function() {
       let leftCol = allThree($boxes.eq(0), $boxes.eq(3), $boxes.eq(6));
@@ -91,8 +85,6 @@ $boxes.on('click', function() {
 
       return topRow || (middleRow || bottomRow);
     };
-
-
 
     let getWinner = function() {
       return diagonalWinner() || (rowWinner() || columnWinner());
@@ -113,7 +105,6 @@ $boxes.on('click', function() {
       $('.message')[0].style.fontSize = "50px";
       $('.message').text("Cat's Game");
       $('.button-wrapper').show();
-
     }
   }
 });

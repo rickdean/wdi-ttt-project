@@ -35,7 +35,6 @@ const signOutSuccess = (data) => {
 const signInSuccess = data => {
   store.user = data.user;
   success(data);
-  console.log(data);
   $('.messages').text('You may play but please create a game first...');
   $('.title').show(500);
   $('.begin').hide(500);
@@ -63,13 +62,11 @@ const createGameSuccess = (data) => {
   $('#game-stats').hide();
   $('.proverb').hide();
   $('.message').show();
-  console.log(data);
 };
 
 const updateGameSuccess = (data) => {
   app.game = data.game;
   $('.messages').text("I anticipate the next move with patience...");
-  console.log(data);
 };
 
 const getGameSuccess = (data) => {
@@ -77,7 +74,6 @@ const getGameSuccess = (data) => {
   $('#total-games').text('Games Played: ' + data.games.length);
   $('#completed-games').text('Games Completed: ' +
     logic.calcCompletedGames(data));
-  console.log(data);
 };
 
 const displayStats = () => {
