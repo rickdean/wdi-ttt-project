@@ -8,7 +8,7 @@ Welcome to Tic-Tac-Zen.  After signing up and signing on the player must first s
 
 GAME URL: https://rickdean.github.io/wdi-ttt-project/
 
-## User's Persepctive
+## User's Persepective
 
 From User's perspective I created set of User Stories that helped in some of the decisions made during development.
 - A User must know when they need to sign-up and sign-in.

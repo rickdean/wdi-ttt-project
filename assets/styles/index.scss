@@ -12,9 +12,9 @@ body {
 }
 
 .title {
+  display: none;
   margin-left: 50px;
   z-index: 2;
-  display: none;
 }
 
 .proverb {
@@ -63,6 +63,10 @@ body {
 }
 
 #reset {
+  display: none;
+}
+
+#past {
   display: none;
 }
 
