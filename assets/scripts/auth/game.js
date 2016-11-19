@@ -109,15 +109,12 @@ $boxes.on('click', function() {
   }
 });
 
-<<<<<<< HEAD
-=======
 let getData = function() {
   return data;
 };
 
 $('#reset').on('click', function() {
   resetGame();
->>>>>>> master
 });
 
 const calcCompletedGames = (data) => {
