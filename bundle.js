@@ -53,7 +53,7 @@ webpackJsonp([0],[
 	var getFormFields = __webpack_require__(4);
 	var api = __webpack_require__(5);
 	var ui = __webpack_require__(9);
-	var gameState = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./game.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var gameState = __webpack_require__(10);
 
 	var onSignUp = function onSignUp(event) {
 	  var data = getFormFields(this);
@@ -305,7 +305,7 @@ webpackJsonp([0],[
 
 	var store = __webpack_require__(7);
 	var app = __webpack_require__(8);
-	var logic = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./game.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var logic = __webpack_require__(10);
 
 	var clear = function clear(modal) {
 	  setTimeout(function () {
@@ -396,7 +396,145 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 10 */,
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	var data = {
+	  "game": {
+	    "cell": {
+	      "index": '',
+	      "value": 'x'
+	    },
+	    "over": false
+	  }
+	};
+
+	var $boxes = $('.box');
+	var turn = "X";
+	var moves = 0;
+
+	var resetGame = function resetGame() {
+	  $boxes.text('');
+	  $boxes.removeClass('X');
+	  $boxes.removeClass('O');
+	  $('.wrap-board').show();
+	  $('#game-stats').hide();
+	  $('.message').hide();
+	  $('.message').text("");
+	  $('#past').hide();
+	  turn = 'X';
+	  moves = 0;
+	};
+
+	var changeTurn = function changeTurn() {
+	  if (turn === 'X') {
+	    turn = 'O';
+	    data.game.cell.value = 'x';
+	  } else {
+	    turn = 'X';
+	    data.game.cell.value = 'o';
+	  }
+	};
+
+	$boxes.on('click', function () {
+	  var _this = this;
+
+	  if ($(this).text() === '') {
+	    (function () {
+	      $(_this).text(turn);
+	      $(_this).addClass(turn);
+	      data.game.cell.index = $(_this).data("index");
+	      moves += 1;
+
+	      var allThree = function allThree($firstBox, $secondBox, $thirdBox) {
+	        var firstBoxOwner = $firstBox.text(),
+	            secondBoxOwner = $secondBox.text(),
+	            thirdBoxOwner = $thirdBox.text();
+
+	        if (firstBoxOwner === secondBoxOwner && secondBoxOwner === thirdBoxOwner) {
+	          if (firstBoxOwner === "X") {
+	            data.game.over = true;
+	            return "X";
+	          } else if (firstBoxOwner === "O") {
+	            data.game.over = true;
+	            return "O";
+	          }
+	        }
+	        return null;
+	      };
+
+	      var diagonalWinner = function diagonalWinner() {
+	        var leftDownDiag = allThree($boxes.eq(0), $boxes.eq(4), $boxes.eq(8));
+	        var rightUpDiag = allThree($boxes.eq(2), $boxes.eq(4), $boxes.eq(6));
+	        return leftDownDiag || rightUpDiag;
+	      };
+
+	      var columnWinner = function columnWinner() {
+	        var leftCol = allThree($boxes.eq(0), $boxes.eq(3), $boxes.eq(6));
+	        var middleCol = allThree($boxes.eq(1), $boxes.eq(4), $boxes.eq(7));
+	        var rightCol = allThree($boxes.eq(2), $boxes.eq(5), $boxes.eq(8));
+
+	        return leftCol || middleCol || rightCol;
+	      };
+
+	      var rowWinner = function rowWinner() {
+	        var topRow = allThree($boxes.eq(0), $boxes.eq(1), $boxes.eq(2));
+	        var middleRow = allThree($boxes.eq(3), $boxes.eq(4), $boxes.eq(5));
+	        var bottomRow = allThree($boxes.eq(6), $boxes.eq(7), $boxes.eq(8));
+
+	        return topRow || middleRow || bottomRow;
+	      };
+
+	      var getWinner = function getWinner() {
+	        return diagonalWinner() || rowWinner() || columnWinner();
+	      };
+
+	      var winner = getWinner();
+	      if (winner) {
+	        $('.wrap-board').hide(500);
+	        $('.message')[0].style.fontSize = "50px";
+	        $('.message').text("Player " + winner + " won!");
+	        $('.button-wrapper').show();
+	        $('#past').show();
+	      } else if (moves < 9) {
+	        changeTurn();
+	      } else {
+	        $('.wrap-board').hide(500);
+	        $('.message')[0].style.fontSize = "50px";
+	        $('.message').text("Cat's Game");
+	        $('.button-wrapper').show();
+	      }
+	    })();
+	  }
+	});
+
+	var getData = function getData() {
+	  return data;
+	};
+
+	$('#reset').on('click', function () {
+	  resetGame();
+	});
+
+	var calcCompletedGames = function calcCompletedGames(data) {
+	  var completedGames = 0;
+	  for (var i = 0; i < data.games.length; i++) {
+	    if (data.games[i].over) {
+	      completedGames++;
+	    }
+	  }
+	  return completedGames;
+	};
+
+	module.exports = {
+	  getData: getData,
+	  calcCompletedGames: calcCompletedGames
+	};
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
